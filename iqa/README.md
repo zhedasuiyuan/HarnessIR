@@ -123,7 +123,7 @@ Model calls per item (diagnoses are cached, so a repeated image costs only its j
 | | plain | harness | harness `--redo`, worst case (3 rounds) |
 |---|---|---|---|
 | `analyze` | 1 | 2 | 7 |
-| `compare` | 1 (2 with `--swap`) | 4 per new image + 2 | + 1 review per round, + 2 judges per extra round |
+| `compare` | 1 (2 with `--swap`) | 2 per new image + 2 (6 for a new pair) | + 1 review per round, + 2 judges per extra round |
 
 With the defaults (4 steps, beam 2, 3 edits, batch 24, 48 validation items), tuning `analyze` takes about 1,500–1,700 calls; `--budget` (default 3,000) stops the search early, and the test evaluation afterwards (about 2 × test size × calls per item) is not counted. `metrics.json` and `report.json` record calls, cache hits and token counts.
 
