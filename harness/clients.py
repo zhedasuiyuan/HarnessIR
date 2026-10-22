@@ -127,8 +127,7 @@ class VLMClient:
         }
         if system:
             payload["systemInstruction"] = {"parts": [{"text": system}]}
-        headers = {"Content-Type": "application/json",
-                   "Authorization": f"Bearer {settings.api_key()}"}
+        headers = {"Content-Type": "application/json", **settings.auth_headers()}
 
         def _call() -> dict[str, Any]:
             resp = requests.post(self.url, headers=headers, json=payload,
@@ -217,8 +216,7 @@ class MFMClient:
                                 "imageSize": str(size or self.image_size)},
             },
         }
-        headers = {"Content-Type": "application/json",
-                   "Authorization": f"Bearer {settings.api_key()}"}
+        headers = {"Content-Type": "application/json", **settings.auth_headers()}
 
         def _call() -> Image.Image:
             resp = requests.post(self.url, headers=headers, json=payload,

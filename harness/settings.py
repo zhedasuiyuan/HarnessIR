@@ -220,3 +220,15 @@ def api_base() -> str:
             "HARNESS_API_BASE, or fill in API_BASE in "
             f"{Path(__file__).name}.")
     return base.rstrip("/")
+
+
+def auth_headers() -> dict[str, str]:
+    """The credential header for the endpoint.
+
+    Gateways that speak the Gemini protocol take ``Authorization: Bearer``.
+    Google's own endpoint (https://generativelanguage.googleapis.com) takes an
+    API key in ``x-goog-api-key`` and rejects it as a bearer token.
+    """
+    if "googleapis.com" in api_base():
+        return {"x-goog-api-key": api_key()}
+    return {"Authorization": f"Bearer {api_key()}"}
