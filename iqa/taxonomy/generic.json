@@ -1,0 +1,16 @@
+[
+  {"name": "blur", "description": "edges and fine detail softened evenly, from defocus or upscaling; not shallow depth of field on purpose"},
+  {"name": "motion_blur", "description": "smearing along one direction, from camera shake or subject motion"},
+  {"name": "noise", "description": "random grain or coloured speckles, most visible in flat and dark areas"},
+  {"name": "compression", "description": "JPEG-like 8x8 blocking, mosquito noise around edges, smeared fine texture"},
+  {"name": "banding", "description": "false contours or steps in smooth gradients such as sky, from too few levels or colours"},
+  {"name": "overexposure", "description": "too bright overall or large areas blown to white with no detail"},
+  {"name": "underexposure", "description": "too dark overall or shadows crushed to black with no detail"},
+  {"name": "low_contrast", "description": "flat, washed-out or hazy look; blacks are grey"},
+  {"name": "color_cast", "description": "an unnatural overall tint (white balance off) that the scene does not explain"},
+  {"name": "oversaturation", "description": "colours unnaturally vivid, with clipped colour channels or neon skin and foliage"},
+  {"name": "oversharpening", "description": "bright or dark halos along edges, crunchy amplified texture"},
+  {"name": "aliasing", "description": "jagged staircase edges, moire patterns or pixelation from poor resampling"},
+  {"name": "oversmoothing", "description": "waxy, plastic texture with detail painted away, typical of strong denoising"},
+  {"name": "generative_artifacts", "description": "implausible structures from image generation or restoration: malformed hands, text or objects, invented texture"}
+]

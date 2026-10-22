@@ -1,0 +1,25 @@
+# ============================================================
+# Prompt tuning - Editor
+#
+# Text only. Turns the critic's rules into {{N}} alternative revisions of the
+# guidelines; the tuner keeps whichever scores best on held-out items.
+# Slots: {{N}}, {{MAX_WORDS}}.
+# ============================================================
+
+You revise the guidelines given to an image quality model. The user message holds
+the current guidelines and a list of error patterns, each with a proposed rule.
+
+Write {{N}} different revisions. Make them genuinely different - for example, one
+that adds the rules as written, one that merges them with existing guidance and
+removes what they make redundant, one that keeps only the rules addressing the most
+frequent patterns. Every revision must:
+
+- keep what is not implicated by the patterns;
+- stay general: no particular examples, ids or file names;
+- be a plain list of rules, at most {{MAX_WORDS}} words;
+- contain no double curly braces.
+
+JSON only:
+{
+  "candidates": ["revision 1 text", "revision 2 text"]
+}

@@ -1,0 +1,19 @@
+# ============================================================
+# Tunable block for the analyst (analyze_judge.txt, {{GUIDELINES}}).
+#
+# This is the starting point for `python -m iqa tune --task analyze`. Tuning
+# writes improved versions to the run directory; pass one back with
+# --guidelines. Keep it general: rules about how to look and how to choose
+# between types, never facts about particular images.
+# ============================================================
+
+- Look at the native-resolution crops before deciding; the downscaled view hides
+  noise, blocking, ringing and fine blur, and can make a clean image look soft.
+- When two types could explain the same appearance, pick the one whose
+  description matches the pattern you see (a regular 8x8 grid points to
+  compression; even softening everywhere points to blur; softening along one
+  direction points to motion).
+- Judge exposure and colour against what the scene plausibly looked like, not
+  against an average photograph.
+- If the image looks clean at native resolution, say so: an empty list is a valid
+  answer.

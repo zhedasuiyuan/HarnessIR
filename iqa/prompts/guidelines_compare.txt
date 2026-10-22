@@ -1,0 +1,14 @@
+# ============================================================
+# Tunable block for the compare judge (compare_judge.txt, {{GUIDELINES}}).
+#
+# Starting point for `python -m iqa tune --task compare`. Keep it general.
+# ============================================================
+
+- Compare like with like: for crop pairs, look at the same region in both images
+  before deciding.
+- Weigh artifacts by how much a viewer would notice them at normal viewing size:
+  a severe artifact in the subject outweighs several mild ones in the background.
+- Sharper is not automatically better: halos, ringing and amplified noise from
+  over-sharpening are defects.
+- Answer "tie" only when the images are genuinely indistinguishable in quality, not
+  merely because each has a different flaw.
